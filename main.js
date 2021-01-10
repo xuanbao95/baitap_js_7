@@ -1,15 +1,13 @@
 function getEle(id) {
     return document.getElementById(id);
 }
+document.getElementById("bamDi").addEventListener("click", listNumbers);
 var danhSachSoNguyen = [];
 function listNumbers() {
     var soNguyenn = getEle("soNguyen").value;
     soNguyenn = parseInt(soNguyenn);
     danhSachSoNguyen.push(soNguyenn);
 }
-
-document.getElementById("bamDi").addEventListener("click", listNumbers);
-
 //tổng các só dương trong mảng
 getEle("tongSoDuong").addEventListener("click", function () {
     var tong = 0;
@@ -66,6 +64,8 @@ getEle("soChanCuoiCung").addEventListener("click", function () {
         };
         if (max % 2 === 0) {
             return max;
+        } else {
+            max = -1;
         }
     }
     getEle("xuatRa").innerHTML = "số chẵn cuối cùng : " + max;
@@ -84,4 +84,20 @@ getEle("tangDan").addEventListener("click", function () {
     }
     getEle("xuatRa").innerHTML = "sắp xếp tăng dần : " + danhSachSoNguyen;
 });
+
+//đỏi chổ 2 giá trị
+getEle("doiViTri").addEventListener("click", function () {
+    var viTri1 = getEle("viTri1").value;
+    var viTri2 = getEle("viTri2").value;
+    for (viTri1; viTri1 < danhSachSoNguyen.length - 1; viTri1++) {
+        for (viTri2 = viTri1 + 1; viTri2 < danhSachSoNguyen.length; viTri2++) {
+            if (danhSachSoNguyen[i] > danhSachSoNguyen[j]) {
+                var temp = danhSachSoNguyen[i];
+                danhSachSoNguyen[i] = danhSachSoNguyen[j];
+                danhSachSoNguyen[j] = temp;
+            }
+        }
+    }
+});
+
 
