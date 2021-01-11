@@ -7,6 +7,7 @@ function listNumbers() {
     var soNguyenn = getEle("soNguyen").value;
     soNguyenn = parseInt(soNguyenn);
     danhSachSoNguyen.push(soNguyenn);
+    console.log(danhSachSoNguyen);
 }
 //tổng các só dương trong mảng
 getEle("tongSoDuong").addEventListener("click", function () {
