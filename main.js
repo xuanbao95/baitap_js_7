@@ -88,17 +88,13 @@ getEle("tangDan").addEventListener("click", function () {
 
 //đỏi chổ 2 giá trị
 getEle("doiViTri").addEventListener("click", function () {
-    var viTri1 = getEle("viTri1").value;
-    var viTri2 = getEle("viTri2").value;
-    for (viTri1; viTri1 < danhSachSoNguyen.length - 1; viTri1++) {
-        for (viTri2 = viTri1 + 1; viTri2 < danhSachSoNguyen.length; viTri2++) {
-            if (danhSachSoNguyen[i] > danhSachSoNguyen[j]) {
-                var temp = danhSachSoNguyen[i];
-                danhSachSoNguyen[i] = danhSachSoNguyen[j];
-                danhSachSoNguyen[j] = temp;
-            }
-        }
-    }
+    var viTri1 = parseInt(getEle("viTri1").value);
+    var viTri2 = parseInt(getEle("viTri2").value);
+    var viTriCu1 = danhSachSoNguyen[viTri1];
+    var viTriCu2 = danhSachSoNguyen[viTri2];
+    danhSachSoNguyen[viTri1] = viTriCu2;
+    danhSachSoNguyen[viTri2] = viTriCu1;
+    getEle("xuatRa").innerHTML = danhSachSoNguyen;
 });
 
 
